@@ -20,10 +20,10 @@ pipeline{
 			     try{
 				    cicd.buildApp()
 				 }catch(Exception e2){
-				   mail bcc: '', body: '''Jenkins Build Faild please check logs..
+				    mail bcc: '', body: '''Jenkins Build Faild please check logs..
 
-				   Thanks & Regards 
-				   Jenkins''', cc: '', from: '', replyTo: '', subject: 'Build Fail ', to: 'kiranbandari894@gmail.com'				 
+				    Thanks & Regards 
+				    Jenkins''', cc: '', from: '', replyTo: '', subject: 'Build Fail ', to: 'kiranbandari894@gmail.com'				 
 				 }
 			    
 			   }  
