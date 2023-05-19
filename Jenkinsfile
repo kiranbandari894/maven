@@ -52,11 +52,11 @@ pipeline{
             steps{
               script{
 			    try{
-				  cicd.Test('https://github.com/intelliqittrainings/FunctionalTesting.git','DeclarativePipelines','testing')
-				  mail bcc: '', body: '''Jenkins Testing is Success 
+				   cicd.Test('https://github.com/intelliqittrainings/FunctionalTesting.git','DeclarativePipelines','testing')
+				   mail bcc: '', body: '''Jenkins Testing is Success 
 
-				  Thanks & Regards 
-                  Jenkins''', cc: '', from: '', replyTo: '', subject: 'Jenkins Testing Success', to: 'kiranbandari894@gmail.com'
+				   Thanks & Regards 
+                   Jenkins''', cc: '', from: '', replyTo: '', subject: 'Jenkins Testing Success', to: 'kiranbandari894@gmail.com'
 				}catch(Exception e4){
 				  mail bcc: '', body: '''Jenkins Testing is Failed Please check logs
 
