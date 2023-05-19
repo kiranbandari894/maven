@@ -70,7 +70,7 @@ pipeline{
 		    steps{
 			   script{
 			     try{
-				     sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  prodution@172.19.0.4:/usr/local/tomee/webapps/myprodapp.war'
+				     sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  production@172.19.0.4:/usr/local/tomee/webapps/myprodapp.war'
 					 mail bcc: '', body: '''Hi,Your Deployment job has run successfull and Deployment has done successful. Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
 				 }
 				 catch(Exception e5){
