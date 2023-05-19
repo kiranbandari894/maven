@@ -32,11 +32,11 @@ pipeline{
            steps{
              script{
 			    try{
-				  sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.19.0.3:/usr/local/tomee/webapps/mytestapp.war'
-				  mail bcc: '', body: '''Jenkins Testing server Deployment Success.
+				   sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.19.0.3:/usr/local/tomee/webapps/mytestapp.war'
+				   mail bcc: '', body: '''Jenkins Testing server Deployment Success.
 
-				  Thanks & Regards 
-                  Jenkins''', cc: '', from: '', replyTo: '', subject: 'Jenkins Testing server Deployment Success', to: 'kiranbandari894@gmail.com'
+				   Thanks & Regards 
+                   Jenkins''', cc: '', from: '', replyTo: '', subject: 'Jenkins Testing server Deployment Success', to: 'kiranbandari894@gmail.com'
 				}catch(Exception e3){
 				   mail bcc: '', body: '''Jenkins Testing server Deployment Fail Please check logs.
 
