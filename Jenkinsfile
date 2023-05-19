@@ -1,3 +1,4 @@
+@Library('cicdlib')_
 pipeline{
     agent any
     stages{
@@ -5,7 +6,7 @@ pipeline{
            steps{
 		       script{
 			     try{
-				   git 'https://github.com/kiranbandari894/maven.git'
+				   cicd.getGit('https://github.com/kiranbandari894/maven.git');
 				 }catch(Exception e1){
 				    mail bcc: '', body: 'Jenkina Download Job failed....', cc: '', from: '', replyTo: '', subject: 'Jenkins Download Job Failed', to: 'kiranbandari894@gmail.com'
 				 } 
@@ -17,7 +18,7 @@ pipeline{
            steps{
                script{
 			     try{
-				    sh 'mvn package'
+				    cicd.buildApp()
 				 }catch(Exception e2){
 				   mail bcc: '', body: '''Jenkins Build Faild please check logs..
 
@@ -32,7 +33,7 @@ pipeline{
            steps{
              script{
 			    try{
-				   sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.19.0.3:/usr/local/tomee/webapps/mytestapp.war'
+				   cicd.DeployApp("DeclarativePipelines",'172.19.0.2','testingapp')
 				   mail bcc: '', body: '''Jenkins Testing server Deployment Success.
 
 				   Thanks & Regards 
@@ -51,8 +52,7 @@ pipeline{
             steps{
               script{
 			    try{
-				  git 'https://github.com/intelliqittrainings/FunctionalTesting.git'
-                  sh 'java -jar /var/jenkins_home/workspace/DeclarativePipelines/testing.jar'
+				  cicd.Test('https://github.com/intelliqittrainings/FunctionalTesting.git','DeclarativePipelines','testing')
 				  mail bcc: '', body: '''Jenkins Testing is Success 
 
 				  Thanks & Regards 
@@ -70,7 +70,7 @@ pipeline{
 		    steps{
 			   script{
 			     try{
-				     sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  production@172.19.0.4:/usr/local/tomee/webapps/myprodapp.war'
+				     cicd.DeployApp("DeclarativePipelines",'172.19.0.4','prodapp')
 					 mail bcc: '', body: '''Hi,Your Deployment job has run successfull and Deployment has done successful. Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
 				 }
 				 catch(Exception e5){
