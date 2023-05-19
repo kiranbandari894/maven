@@ -28,20 +28,10 @@ pipeline{
 		  success{
 		    deploy adapters: [tomcat9(credentialsId: '24845a25-1540-433a-bcae-40d87d61b004', path: '', url: 'http://172.18.0.4:8080/')], contextPath: 'myprodapp', war: '**/*.war'
             
-			mail bcc: '', body: '''Hi,
-
-			Your Deployment job has run successfull and Deployment has done successful.
-
-			Thanks & regards,
-			Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
+			mail bcc: '', body: '''Hi,Your Deployment job has run successfull and Deployment has done successful. Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
 		  }
 		  failure{
-			mail bcc: '', body: '''Hi,
-
-			Your Deployment job has  fail Please check logs
-
-			Thanks & regards,
-			Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Failed', to: 'kiranbandari894@gmail.com'
+			mail bcc: '', body: '''Hi, Your Deployment job has  fail Please check logs Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Failed', to: 'kiranbandari894@gmail.com'
 		  }
 	}
 }
