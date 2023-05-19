@@ -32,7 +32,7 @@ pipeline{
            steps{
              script{
 			    try{
-				  sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.18.0.2:/usr/local/tomee/webapps/mytestapp.war'
+				  sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.19.0.3:/usr/local/tomee/webapps/mytestapp.war'
 				  mail bcc: '', body: '''Jenkins Testing server Deployment Success.
 
 				  Thanks & Regards 
@@ -70,7 +70,7 @@ pipeline{
 		    steps{
 			   script{
 			     try{
-				     deploy adapters: [tomcat9(credentialsId: '24845a25-1540-433a-bcae-40d87d61b004', path: '', url: 'http://172.18.0.4:8080/')], contextPath: 'myprodapp', war: '**/*.war'
+				     deploy adapters: [tomcat9(credentialsId: '24845a25-1540-433a-bcae-40d87d61b004', path: '', url: 'http://172.19.0.4:8080/')], contextPath: 'myprodapp', war: '**/*.war'
 					 mail bcc: '', body: '''Hi,Your Deployment job has run successfull and Deployment has done successful. Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
 				 }
 				 catch(Exception e5){
