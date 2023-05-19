@@ -13,7 +13,7 @@ pipeline{
         }
         stage('ContinuousDeployment'){
            steps{
-                sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.18.0.2:/usr/local/tomee/webapps'
+                sh 'scp /var/jenkins_home/workspace/DeclarativePipelines/webapp/target/webapp.war  ubuntu@172.18.0.2:/usr/local/tomee/webapps/mytestapp.war'
            }
         }
         stage('ContinuousTesting'){
