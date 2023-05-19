@@ -6,7 +6,7 @@ pipeline{
            steps{
 		       script{
 			     try{
-				   cicd.getGit('https://github.com/kiranbandari894/maven.git')
+				  cicd.getGit('https://github.com/kiranbandari894/maven.git')
 				 }catch(Exception e1){
 				    mail bcc: '', body: 'Jenkina Download Job failed....', cc: '', from: '', replyTo: '', subject: 'Jenkins Download Job Failed', to: 'kiranbandari894@gmail.com'
 				 } 
