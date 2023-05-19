@@ -33,7 +33,7 @@ pipeline{
            steps{
              script{
 			    try{
-				   cicd.DeployApp("DeclarativePipelines",'172.19.0.2','ubuntu','testingapp')
+				   cicd.DeployApp("DeclarativePipelines",'172.19.0.3','ubuntu','testingapp')
 				   mail bcc: '', body: '''Jenkins Testing server Deployment Success.
 
 				   Thanks & Regards 
