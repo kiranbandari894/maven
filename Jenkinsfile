@@ -22,7 +22,9 @@ pipeline{
                 sh 'java -jar /var/jenkins_home/workspace/DeclarativePipelines/testing.jar'
             }
         }
-        post{
+     
+    }
+	post{
 		  success{
 		    deploy adapters: [tomcat9(credentialsId: '24845a25-1540-433a-bcae-40d87d61b004', path: '', url: 'http://172.18.0.4:8080/')], contextPath: 'myprodapp', war: '**/*.war'
             
@@ -41,8 +43,5 @@ pipeline{
 			Thanks & regards,
 			Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Failed', to: 'kiranbandari894@gmail.com'
 		  }
-		}
-       
-       
-    }
+	}
 }
