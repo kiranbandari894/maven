@@ -33,7 +33,7 @@ pipeline{
            steps{
              script{
 			    try{
-				   cicd.DeployApp("DeclarativePipelines",'172.19.0.3','ubuntu','testingapp')
+				   cicd.DeployApp('172.19.0.3','testingapp')
 				   mail bcc: '', body: '''Jenkins Testing server Deployment Success.
 
 				   Thanks & Regards 
@@ -70,7 +70,7 @@ pipeline{
 		    steps{
 			   script{
 			     try{
-				     cicd.DeployApp("DeclarativePipelines",'172.19.0.4','production','prodapp')
+				     cicd.DeployApp('172.19.0.4','prodapp')
 					 mail bcc: '', body: '''Hi,Your Deployment job has run successfull and Deployment has done successful. Thanks & regards, Jenkins Dashboard''', cc: '', from: '', replyTo: '', subject: 'Deployment Job Successful', to: 'kiranbandari894@gmail.com'
 				 }
 				 catch(Exception e5){
