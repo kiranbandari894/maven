@@ -66,7 +66,7 @@ pipeline{
 			  }
             }
         }
-		stage('ContinuousDelivery'){
+		stage('ContinuousDelivery'){ 
 		    steps{
 			   script{
 			     try{
