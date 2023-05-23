@@ -23,7 +23,7 @@
  
   <modules>
     <module>server</module>
-    <module>webapp-1.0-SNAPSHOT</module>
+    <module>webapp</module>
   </modules>
 
   <distributionManagement>
