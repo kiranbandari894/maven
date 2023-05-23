@@ -20,7 +20,7 @@
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
      <sonar.login>admin</sonar.login>
-     <sonar.password>sqp_5a4c096a5d537c03294693739c344b9f50265c1b</sonar.password>       
+     <sonar.password>sqp_9acfb52f27047629c7a780688afe09650176e08d</sonar.password>       
   </properties>
  
   <modules>
