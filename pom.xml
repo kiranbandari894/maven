@@ -19,19 +19,17 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-    <sonar.host.url>http://192.168.0.111:9091</sonar.host.url>
   </properties>
  
   <modules>
     <module>server</module>
-    <module>webapp</module>
+    <module>webapp-1.0.2-SNAPSHOT</module>
   </modules>
 
   <distributionManagement>
     <site>
       <id>site-server</id>
       <name>Test Project Site</name>
-      <url>http://192.168.0.111:8081/repository/mula-repository/</url>
     </site>
   </distributionManagement>
 
